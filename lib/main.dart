@@ -1,25 +1,50 @@
 import 'package:flutter/material.dart';
-import 'package:plant_app/constants.dart';
-import 'package:plant_app/screens/home/home_screen.dart';
+import 'package:plant_app/screens/more_screen.dart';
 
-void main() {
-  runApp(MyApp());
+import 'package:plant_app/widget/bottom_bar.dart';
+import 'package:plant_app/screens/home_screen.dart';
+
+void main()=>runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class _MyAppState extends State<MyApp> {
+  TabController controller;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Plant App',
-      theme: ThemeData(
-        scaffoldBackgroundColor: kBackgroundColor,
-        primaryColor: kPrimaryColor,
-        textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+      title:'',
+      theme:ThemeData(
+        brightness: Brightness.dark,
+        primaryColor:Colors.black,
+        accentColor:Colors.white,
       ),
-      home: HomeScreen(),
+      home:DefaultTabController(
+        length:4,
+        child:Scaffold(
+          body:TabBarView(
+            physics: NeverScrollableScrollPhysics(),
+            children:[
+              HomeScreen(),
+              Container(
+                child:Center(
+                  child:Text('Search'),
+                ),
+              ),
+              Container(
+                child:Center(
+                  child:Text('Save'),
+                ),
+              ),
+              MoreScreen(),
+            ],
+          ),
+          bottomNavigationBar:BottomBar(),
+        ),
+      ),
     );
   }
 }
