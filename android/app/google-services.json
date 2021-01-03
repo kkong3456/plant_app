@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "206874888514",
+    "firebase_url": "https://been-s-todo-project.firebaseio.com",
+    "project_id": "been-s-todo-project",
+    "storage_bucket": "been-s-todo-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206874888514:android:a3371cb2e2cf3b6ea920db",
+        "android_client_info": {
+          "package_name": "com.cafe24.kkong7.flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "206874888514-emvjlnovm5t0otr2p20veoci2uhgn0ao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPoRe2Du5C1sml4-Ek7TsFco3hXP3NnzU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "206874888514-emvjlnovm5t0otr2p20veoci2uhgn0ao.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
