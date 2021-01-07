@@ -27,11 +27,11 @@ class _CarouseImageState extends State<CarouseImage> {
     super.initState();
     movies = widget.movies;
     images =
-        movies.map((m) => Image.asset('assets/images/${m.poster}')).toList();
+        movies.map((m) => Image.network(m.poster)).toList();
     keywords = movies.map((m) => m.keyword).toList();
     likes = movies.map((m) => m.like).toList();
     _currentKeyword = keywords[0];
-    print('likes $likes');
+    print('likes $images');
   }
 
   @override
@@ -49,6 +49,9 @@ class _CarouseImageState extends State<CarouseImage> {
               setState(() {
                 _currentPage = index;
                 _currentKeyword = keywords[_currentPage];
+                print('movies is $movies');
+                print('_currentPage $_currentPage');
+                print('_currentKeyword $_currentKeyword');
               });
             }),
           ),
@@ -70,11 +73,25 @@ class _CarouseImageState extends State<CarouseImage> {
                       likes[_currentPage]
                           ? IconButton(
                               icon: Icon(Icons.check),
-                              onPressed: () {},
+                              onPressed: () {
+                                setState((){
+                                  likes[_currentPage]=!likes[_currentPage];
+                                  movies[_currentPage].reference.update(
+                                    {'like':likes[_currentPage]}
+                                  );
+                                });
+                              },
                             )
                           : IconButton(
                               icon: Icon(Icons.add),
-                              onPressed: () {},
+                              onPressed: () {
+                                setState((){
+                                  likes[_currentPage]=!likes[_currentPage];
+                                  movies[_currentPage].reference.update(
+                                    {'like':likes[_currentPage]}
+                                  );
+                                });
+                              },
                             ),
                       Text(
                         '내가 찜한 콘텐츠',
