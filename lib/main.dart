@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:plant_app/screens/like_screen.dart';
 import 'package:plant_app/screens/more_screen.dart';
+import 'package:plant_app/screens/search_screen.dart';
 
 import 'package:plant_app/widget/bottom_bar.dart';
 import 'package:plant_app/screens/home_screen.dart';
@@ -34,16 +36,13 @@ class _MyAppState extends State<MyApp> {
             physics: NeverScrollableScrollPhysics(),
             children:[
               HomeScreen(),
-              Container(
-                child:Center(
-                  child:Text('Search'),
-                ),
-              ),
-              Container(
-                child:Center(
-                  child:Text('Save'),
-                ),
-              ),
+              SearchScreen(),
+              LikeScreen(),
+              // Container(
+              //   child:Center(
+              //     child:Text('Save'),
+              //   ),
+              // ),
               MoreScreen(),
             ],
           ),
